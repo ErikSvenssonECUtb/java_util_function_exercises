@@ -170,7 +170,7 @@ public class App
     public static void exercise12(String message){
         System.out.println(message);
         Predicate<Person> bornBefore1950 = person -> person.getBirthDate().getYear() < 1950;
-        Comparator comparator = Comparator.comparing(Person::getBirthDate).reversed();
+        Comparator<Person> comparator = Comparator.comparing(Person::getBirthDate).reversed();
         dataStorage.findAndSort(bornBefore1950, comparator)
                 .forEach(System.out::println);
         System.out.println("----------------------");
